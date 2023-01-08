@@ -58,10 +58,10 @@ public class RadioTest {
     public void shouldGetNextStationAfterLast() {
         Radio rad = new Radio();
 
-        rad.currentStation = 9;
+        rad.setCurrentStation(9);
 
         int expected = 0;
-        int actual = rad.Next();
+        int actual = rad.next();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -70,10 +70,10 @@ public class RadioTest {
     public void shouldGetNextStationAfterFirst() {
         Radio rad = new Radio();
 
-        rad.currentStation = 0;
+        rad.setCurrentStation(0);
 
         int expected = 1;
-        int actual = rad.Next();
+        int actual = rad.next();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -81,10 +81,10 @@ public class RadioTest {
     @Test
     public void shouldGetPrevStationBeforeFirst() {
         Radio rad = new Radio();
-        rad.currentStation = 0;
+        rad.setCurrentStation(0);
 
         int expected = 9;
-        int actual = rad.Prev();
+        int actual = rad.prev();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -92,10 +92,10 @@ public class RadioTest {
     @Test
     public void shouldGetPrevStationBeforeLast() {
         Radio rad = new Radio();
-        rad.currentStation = 9;
+        rad.setCurrentStation(9);
 
         int expected = 8;
-        int actual = rad.Prev();
+        int actual = rad.prev();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -106,7 +106,7 @@ public class RadioTest {
         rad.currentVolume = 0;
 
         int expected = 1;
-        int actual = rad.Up();
+        int actual = rad.up();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -117,7 +117,7 @@ public class RadioTest {
         rad.currentVolume = 10;
 
         int expected = 10;
-        int actual = rad.Up();
+        int actual = rad.up();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -128,7 +128,7 @@ public class RadioTest {
         rad.currentVolume = 0;
 
         int expected = 0;
-        int actual = rad.Down();
+        int actual = rad.down();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -139,7 +139,7 @@ public class RadioTest {
         rad.currentVolume = 10;
 
         int expected = 9;
-        int actual = rad.Down();
+        int actual = rad.down();
 
         Assertions.assertEquals(expected, actual);
     }
